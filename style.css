@@ -47,7 +47,7 @@
   /* HERO */
   .hero{
     height:70vh;
-    background:("logo.png") center/cover no-repeat;
+    background:logo.png center/cover no-repeat;
     margin-top:60px;
   }
   
