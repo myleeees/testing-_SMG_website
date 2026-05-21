@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SMG Facade | Technical Façade Management</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar sticky">
+  <div class="nav-container">
+    <div class="logo" onclick="showPage('home')">SMG FACADE</div>
+
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+
+    <ul class="nav-links" id="navLinks">
+      <li onclick="showPage('home')">Home</li>
+      <li onclick="showPage('services')">Services</li>
+      <li onclick="showPage('projects')">Projects</li>
+      <li onclick="showPage('about')">About Us</li>
+      <li onclick="showPage('insights')">Insights</li>
+      <li onclick="showPage('careers')">Careers</li>
+      <li onclick="showPage('contact')">Contact</li>
+    </ul>
+  </div>
+</header>
+
+<!-- HOME -->
+<section id="home" class="page active">
+
+  <div class="hero">
+    <div class="overlay">
+      <h1>Technical Façade Management</h1>
+      <p>From Concept to Completion</p>
+      <div class="hero-buttons">
+        <button onclick="showPage('services')">Our Services</button>
+        <button onclick="showPage('contact')">Contact Us</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container intro">
+    <h2>We coordinate façades before problems reach site.</h2>
+    <p>
+      Façade packages involve design, engineering, procurement, compliance,
+      logistics and installation interfaces. SMG Facade manages these early
+      to reduce risk and improve delivery.
+    </p>
+  </div>
+
+  <div class="container services-preview">
+    <h2>Core Services</h2>
+
+    <div class="grid">
+      <div class="card">Façade Management</div>
+      <div class="card">Engineering Coordination</div>
+      <div class="card">Tender Cost Estimation</div>
+      <div class="card">Supply & Installation Coordination</div>
+    </div>
+  </div>
+
+  <div class="container why">
+    <h2>Why SMG Facade</h2>
+
+    <div class="grid">
+      <div class="card">25+ Years Experience</div>
+      <div class="card">Start-to-Finish Coordination</div>
+      <div class="card">Commercially Practical Solutions</div>
+    </div>
+  </div>
+
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="page">
+  <div class="container">
+    <h2>Services</h2>
+
+    <div class="grid">
+      <div class="card">
+        Façade Management<br><br>
+        End-to-end coordination from design to completion.
+      </div>
+
+      <div class="card">
+        Engineering Coordination<br><br>
+        Aligning architects, engineers and suppliers.
+      </div>
+
+      <div class="card">
+        Tender Estimation<br><br>
+        BOQ, costing, value engineering and procurement support.
+      </div>
+
+      <div class="card">
+        Supply Coordination<br><br>
+        Managing fabrication and installation teams.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="page">
+  <div class="container">
+    <h2>Projects</h2>
+
+    <div class="grid">
+      <div class="card">Residential Developments</div>
+      <div class="card">Commercial Buildings</div>
+      <div class="card">Mixed Use Projects</div>
+      <div class="card">High Rise Façades</div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="page">
+  <div class="container">
+    <h2>About SMG Facade</h2>
+
+    <p>
+      We are a New South Wales-based façade coordination company bridging design
+      intent and construction delivery across Australia.
+    </p>
+  </div>
+</section>
+
+<!-- INSIGHTS -->
+<section id="insights" class="page">
+  <div class="container">
+    <h2>Insights</h2>
+
+    <div class="grid">
+      <div class="card">Why Early Façade Coordination Matters</div>
+      <div class="card">Scope Gaps in Tendering</div>
+      <div class="card">Design vs Buildability</div>
+      <div class="card">Procurement Risks</div>
+    </div>
+  </div>
+</section>
+
+<!-- CAREERS -->
+<section id="careers" class="page">
+  <div class="container">
+    <h2>Careers</h2>
+
+    <p>
+      We are expanding soon across Australia.
+      Send your CV to careers@smgfacade.com.au
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="page">
+  <div class="container">
+    <h2>Contact Us</h2>
+
+    <p>Email: info@smgfacade.com.au</p>
+    <p>Phone: +61 XXX XXX XXX</p>
+  </div>
+</section>
+
+<script>
+function showPage(id){
+  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+
+function toggleMenu(){
+  document.getElementById("navLinks").classList.toggle("show");
+}
+</script>
+
+<script src="script.js"></script>
+
+</body>
+</html>

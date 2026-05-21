@@ -1,0 +1,151 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+  }
+  
+  body{
+    background:#0e0e0e;
+    color:#eaeaea;
+    line-height:1.6;
+  }
+  
+  /* NAVBAR */
+  .navbar{
+    background:#0b4f6c;
+    position:fixed;
+    width:100%;
+    top:0;
+    z-index:100;
+  }
+  
+  .nav-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 20px;
+  }
+  
+  .logo{
+    color:white;
+    font-weight:bold;
+    cursor:pointer;
+  }
+  
+  .nav-links{
+    display:flex;
+    list-style:none;
+    gap:20px;
+  }
+  
+  .nav-links li{
+    cursor:pointer;
+    color:white;
+  }
+  
+  /* HERO */
+  .hero{
+    height:70vh;
+    background:url("https://images.unsplash.com/photo-1570129477492-45c003edd2be") center/cover no-repeat;
+    margin-top:60px;
+  }
+  
+  .overlay{
+    height:100%;
+    background:rgba(0,0,0,0.6);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+  }
+  
+  .overlay h1{
+    font-size:40px;
+  }
+  
+  .hero-buttons button{
+    margin:10px;
+    padding:10px 20px;
+    border:none;
+    cursor:pointer;
+  }
+  
+  /* SECTIONS */
+  .page{
+    display:none;
+    padding:80px 20px;
+  }
+  
+  .page.active{
+    display:block;
+  }
+  
+  .container{
+    max-width:1000px;
+    margin:auto;
+  }
+  
+  h2{
+    margin-bottom:20px;
+  }
+  
+  /* GRID CARDS */
+  .grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:15px;
+  }
+  
+  .card{
+    background:#1c1c1c;
+    padding:20px;
+    border-radius:8px;
+    transition:0.3s;
+  }
+  
+  .card:hover{
+    transform:translateY(-5px);
+  }
+  
+  /* HAMBURGER */
+  .hamburger{
+    display:none;
+    flex-direction:column;
+    gap:4px;
+    cursor:pointer;
+  }
+  
+  .hamburger div{
+    width:25px;
+    height:3px;
+    background:white;
+  }
+  
+  /* MOBILE */
+  @media(max-width:768px){
+  
+    .nav-links{
+      display:none;
+      flex-direction:column;
+      position:absolute;
+      top:60px;
+      left:0;
+      width:100%;
+      background:#0b4f6c;
+      padding:10px;
+    }
+  
+    .nav-links.show{
+      display:flex;
+    }
+  
+    .grid{
+      grid-template-columns:1fr;
+    }
+  
+    .hamburger{
+      display:flex;
+    }
+  }
