@@ -38,11 +38,12 @@ body{
 }
 
 /* LOGO */
-.logo{
-    display:flex;
-    align-items:left;
-    cursor:pointer;
-}
+
+    .logo {
+      width: 120px; /* adjust size */
+      height: auto;
+      margin-bottom: 20px;
+    }
 
 .logo img{
     height:25px;
