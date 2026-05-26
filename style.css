@@ -143,27 +143,28 @@ body{
     justify-content:center;
 }
 
-/* VIDEO BACKGROUND */
-.hero-video{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    z-index:-1;
+.hero{
+    position:relative;
+    height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    overflow:hidden;
 }
 
-/* DARK OVERLAY (optional but recommended) */
-.hero::before{
-    content:"";
+/* VIDEO */
+.hero-video{
     position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-    background:rgba(0,0,0,0.4);
-    z-index:0;
+    top:50%;
+    left:50%;
+    transform:translate(-50%, -50%);
+    
+    width:90%;
+    height:80%;
+    
+    object-fit:cover;
+    border-radius:12px;
+    z-index:-1;
 }
 
 /* TEXT OVER VIDEO */
