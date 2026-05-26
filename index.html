@@ -4,11 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SMG FACADE |</title>
-    .logo {
-      width: 120px; /* adjust size */
-      height: auto;
-      margin-bottom: 20px;
-    }
 <section class="hero">
   <video autoplay muted loop playsinline class="hero-video">
     <source src="SMGvideo.mp4" type="video/mp4">
@@ -24,7 +19,11 @@
   --serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
 }
 html,body{height:100%;background:var(--dark);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden}
-
+  .logo {
+      width: 120px; /* adjust size */
+      height: auto;
+      margin-bottom: 20px;
+    }
 /* NAV */
 nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(17,17,16,0.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(184,154,90,0.15)}
 .logo{font-family:var(--serif);font-size:1.55rem;font-weight:600;letter-spacing:0.06em;color:#fff;cursor:pointer}
