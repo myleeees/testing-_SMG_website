@@ -39,11 +39,13 @@ body{
 
 /* LOGO */
 
-    .logo {
-      width: 120px; /* adjust size */
-      height: auto;
-      margin-bottom: 20px;
-    }
+.logo{
+  width:110px;
+  height:auto;
+  cursor:pointer;
+  object-fit:contain;
+  display:block;
+}
 
 .logo img{
     height:25px;
