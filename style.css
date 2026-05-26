@@ -97,6 +97,10 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
+    .overlay{
+    position:relative;
+    z-index:1;
+}
 }
 
 /* VIDEO BACKGROUND */
@@ -109,7 +113,6 @@ body{
     object-fit:cover;
     z-index:-1;
 }
-
 .overlay{
     width:100%;
     padding:20px;
@@ -134,44 +137,50 @@ body{
     margin-bottom:30px;
 }
 
-/* HERO BUTTONS */
-.hero-buttons{
+.hero{
+    height:100vh;
+    margin-top:70px;
+    position:relative;
+    overflow:hidden;
     display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+    align-items:center;
     justify-content:center;
 }
 
-.hero-buttons button{
-    padding:14px 28px;
-    border:none;
-    cursor:pointer;
-    font-size:14px;
-    font-weight:bold;
-    border-radius:4px;
-    transition:0.3s;
-    text-transform:uppercase;
-    letter-spacing:1px;
+/* VIDEO BACKGROUND */
+.hero-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    z-index:-1;
 }
 
-.hero-buttons button:first-child{
-    background:#0b4f6c;
-    color:white;
+/* DARK OVERLAY (optional but recommended) */
+.hero::before{
+    content:"";
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.4);
+    z-index:0;
 }
 
-.hero-buttons button:first-child:hover{
-    background:#11739d;
-}
-
-.hero-buttons button:last-child{
-    background:transparent;
-    border:1px solid white;
-    color:white;
-}
-
-.hero-buttons button:last-child:hover{
-    background:white;
-    color:#111;
+/* TEXT OVER VIDEO */
+.overlay{
+    position:relative;
+    z-index:1;
+    width:100%;
+    padding:20px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
 }
 
 /* PAGE SECTIONS */
