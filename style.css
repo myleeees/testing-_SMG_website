@@ -155,15 +155,15 @@ body{
 /* VIDEO */
 .hero-video{
     position:absolute;
-    top:50%;
-    left:50%;
+    top:20%;
+    left:20%;
     transform:translate(-50%, -50%);
     
-    width:70%;
-    height:80%;
+    width:20%;
+    height:20%;
     
     object-fit:cover;
-    border-radius:12px;
+    border-radius:10px;
     z-index:-1;
 }
 
