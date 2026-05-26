@@ -1,40 +1,1027 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>SMG FACADE |</title>
-<section class="hero">
-  <video autoplay muted loop playsinline class="hero-video">
-    <source src="SMGvideo.mp4" type="video/mp4">
-  </video>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<title>SMG FACADE</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+
+*, *::before, *::after{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --gold:#B89A5A;
+  --gold-light:#D4B87A;
+  --charcoal:#1A1A18;
+  --dark:#111110;
+  --mid:#2E2E2C;
+  --muted:#888880;
+  --text:#E8E6DF;
+
+  --serif:'Cormorant Garamond', serif;
+  --sans:'DM Sans', sans-serif;
+}
+
+html,body{
+  background:var(--dark);
+  color:var(--text);
+  font-family:var(--sans);
+  overflow-x:hidden;
+  scroll-behavior:smooth;
+}
+
+/* NAV */
+
+nav{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  z-index:999;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:1rem 3rem;
+  background:rgba(17,17,16,0.94);
+  backdrop-filter:blur(12px);
+  border-bottom:1px solid rgba(184,154,90,0.15);
+}
+
+.logo{
+  font-family:var(--serif);
+  font-size:1.5rem;
+  font-weight:600;
+  color:#fff;
+  cursor:pointer;
+}
+
+.logo span{
+  color:var(--gold);
+}
+
+.nav-links{
+  display:flex;
+  list-style:none;
+  gap:0.2rem;
+}
+
+.nav-links button{
+  background:none;
+  border:none;
+  color:var(--muted);
+  cursor:pointer;
+  padding:0.5rem 0.8rem;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  font-size:0.72rem;
+  border-bottom:2px solid transparent;
+  transition:0.3s;
+}
+
+.nav-links button:hover,
+.nav-links button.active{
+  color:var(--gold-light);
+  border-bottom-color:var(--gold);
+}
+
+.nav-cta{
+  background:none;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:0.7rem 1.3rem;
+  cursor:pointer;
+  text-transform:uppercase;
+  font-size:0.72rem;
+  letter-spacing:0.1em;
+  transition:0.3s;
+}
+
+.nav-cta:hover{
+  background:var(--gold);
+  color:var(--dark);
+}
+
+/* PAGE SYSTEM */
+
+.page{
+  display:none;
+  min-height:100vh;
+  padding-top:75px;
+  animation:fadeIn 0.3s ease;
+}
+
+.page.active{
+  display:block;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity:0;
+    transform:translateY(10px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
+
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:0 3rem;
+}
+
+.eyebrow{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:0.2em;
+  font-size:0.7rem;
+  margin-bottom:1rem;
+}
+
+.page-title{
+  font-family:var(--serif);
+  font-size:clamp(2.5rem,5vw,4rem);
+  font-weight:300;
+  line-height:1.1;
+  margin-bottom:1rem;
+}
+
+.page-title em{
+  color:var(--gold-light);
+  font-style:italic;
+}
+
+.section-title{
+  font-family:var(--serif);
+  font-size:2.3rem;
+  font-weight:300;
+  margin-bottom:1rem;
+}
+
+.section-title em{
+  color:var(--gold-light);
+}
+
+.lead{
+  color:rgba(232,230,223,0.7);
+  line-height:1.8;
+  max-width:600px;
+}
+
+.btn-gold{
+  display:inline-block;
+  background:var(--gold);
+  color:var(--dark);
+  padding:0.9rem 2rem;
+  text-decoration:none;
+  border:none;
+  cursor:pointer;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  font-size:0.72rem;
+  transition:0.3s;
+}
+
+.btn-gold:hover{
+  background:var(--gold-light);
+}
+
+.btn-outline{
+  display:inline-block;
+  background:none;
+  border:1px solid var(--gold);
+  color:var(--gold);
+  padding:0.9rem 2rem;
+  cursor:pointer;
+  text-decoration:none;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+  font-size:0.72rem;
+  transition:0.3s;
+}
+
+.btn-outline:hover{
+  background:var(--gold);
+  color:var(--dark);
+}
+
+.action-row{
+  display:flex;
+  gap:1rem;
+  margin-top:2rem;
+  flex-wrap:wrap;
+}
+
+/* HERO */
+
+.home-hero{
+  position:relative;
+  min-height:100vh;
+  display:flex;
+  align-items:flex-end;
+  padding-bottom:5rem;
+}
+
+.home-hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+  linear-gradient(to bottom,
+  rgba(17,17,16,0.2),
+  rgba(17,17,16,0.9)),
+  url('https://images.unsplash.com/photo-1486325212027-8081e485255e?w=1800&q=80')
+  center/cover no-repeat;
+}
+
+.home-hero-content{
+  position:relative;
+}
+
+.stats-row{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  background:var(--mid);
+}
+
+.stat-item{
+  text-align:center;
+  padding:2rem;
+  border-right:1px solid rgba(184,154,90,0.1);
+}
+
+.stat-item:last-child{
+  border-right:none;
+}
+
+.stat-num{
+  display:block;
+  font-family:var(--serif);
+  font-size:2.3rem;
+  color:var(--gold);
+}
+
+.stat-lbl{
+  text-transform:uppercase;
+  font-size:0.7rem;
+  letter-spacing:0.1em;
+  color:var(--muted);
+}
+
+.home-intro{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:4rem;
+  padding:5rem 0;
+  align-items:center;
+}
+
+.home-intro img{
+  width:100%;
+  height:420px;
+  object-fit:cover;
+}
+
+.badge{
+  position:absolute;
+  bottom:-1rem;
+  right:-1rem;
+  width:110px;
+  height:110px;
+  background:var(--gold);
+  color:var(--dark);
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+
+.home-intro-img{
+  position:relative;
+}
+
+.badge strong{
+  font-size:2rem;
+  font-family:var(--serif);
+}
+
+/* GRID */
+
+.services-grid,
+.projects-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:1px;
+  background:rgba(184,154,90,0.1);
+}
+
+.svc-card,
+.proj-card{
+  background:var(--charcoal);
+}
+
+.svc-card{
+  padding:2rem;
+}
+
+.svc-num{
+  color:rgba(184,154,90,0.5);
+  font-size:1.5rem;
+  display:block;
+  margin-bottom:1rem;
+  font-family:var(--serif);
+}
+
+.svc-title{
+  font-family:var(--serif);
+  margin-bottom:0.7rem;
+}
+
+.svc-desc{
+  color:var(--muted);
+  line-height:1.7;
+  font-size:0.9rem;
+}
+
+.proj-card{
+  position:relative;
+  overflow:hidden;
+}
+
+.proj-card img{
+  width:100%;
+  height:320px;
+  object-fit:cover;
+  filter:brightness(0.65);
+  transition:0.4s;
+}
+
+.proj-card:hover img{
+  transform:scale(1.04);
+}
+
+.proj-info{
+  position:absolute;
+  bottom:0;
+  left:0;
+  width:100%;
+  padding:1.5rem;
+  background:linear-gradient(to top, rgba(17,17,16,0.95), transparent);
+}
+
+.proj-tag{
+  color:var(--gold);
+  text-transform:uppercase;
+  font-size:0.65rem;
+  letter-spacing:0.15em;
+  margin-bottom:0.4rem;
+}
+
+.proj-title{
+  font-family:var(--serif);
+  font-size:1.3rem;
+}
+
+.proj-loc{
+  color:rgba(232,230,223,0.5);
+  font-size:0.8rem;
+  margin-top:0.3rem;
+}
+
+/* CONTACT */
+
+.cq-page{
+  padding:5rem 0;
+}
+
+.quote-grid{
+  display:grid;
+  grid-template-columns:1fr 1.3fr;
+  gap:4rem;
+  margin-top:3rem;
+}
+
+.contact-detail{
+  display:flex;
+  flex-direction:column;
+  gap:1.3rem;
+  margin-top:2rem;
+}
+
+.c-label{
+  color:var(--gold);
+  text-transform:uppercase;
+  font-size:0.65rem;
+  letter-spacing:0.15em;
+}
+
+.c-value{
+  color:rgba(232,230,223,0.8);
+  margin-top:0.3rem;
+}
+
+.contact-form{
+  display:flex;
+  flex-direction:column;
+  gap:1rem;
+}
+
+.form-row{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:1rem;
+}
+
+.form-group{
+  display:flex;
+  flex-direction:column;
+}
+
+.form-group label{
+  margin-bottom:0.5rem;
+  color:var(--muted);
+  font-size:0.7rem;
+  text-transform:uppercase;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea{
+  background:var(--mid);
+  border:1px solid rgba(184,154,90,0.15);
+  padding:0.9rem;
+  color:var(--text);
+  outline:none;
+}
+
+.submit-btn{
+  background:var(--gold);
+  color:var(--dark);
+  border:none;
+  padding:1rem;
+  cursor:pointer;
+  text-transform:uppercase;
+  letter-spacing:0.1em;
+}
+
+/* FOOTER */
+
+.site-footer{
+  padding:2rem 0;
+  border-top:1px solid rgba(184,154,90,0.1);
+}
+
+.footer-inner{
+  max-width:1100px;
+  margin:auto;
+  padding:0 3rem;
+  display:flex;
+  justify-content:space-between;
+  flex-wrap:wrap;
+  gap:1rem;
+}
+
+.footer-inner span{
+  color:var(--muted);
+  font-size:0.8rem;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+  nav{
+    padding:1rem;
+  }
+
+  .nav-links{
+    display:none;
+  }
+
+  .container{
+    padding:0 1rem;
+  }
+
+  .stats-row{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .home-intro,
+  .quote-grid{
+    grid-template-columns:1fr;
+  }
+
+  .services-grid,
+  .projects-grid{
+    grid-template-columns:1fr;
+  }
+
+  .form-row{
+    grid-template-columns:1fr;
+  }
+
+  .footer-inner{
+    flex-direction:column;
+    text-align:center;
+  }
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+  <span class="logo" onclick="showPage('home')">
+    SMG<span>.</span>FACADE
+  </span>
+
+  <ul class="nav-links">
+
+    <li><button onclick="showPage('home')" id="nav-home" class="active">Home</button></li>
+
+    <li><button onclick="showPage('services')" id="nav-services">Services</button></li>
+
+    <li><button onclick="showPage('projects')" id="nav-projects">Projects</button></li>
+
+    <li><button onclick="showPage('about')" id="nav-about">About Us</button></li>
+
+    <li><button onclick="showPage('insights')" id="nav-insights">Insights</button></li>
+
+    <li><button onclick="showPage('careers')" id="nav-careers">Careers</button></li>
+
+    <li><button onclick="showPage('contact')" id="nav-contact">Contact</button></li>
+
+  </ul>
+
+  <button class="nav-cta" onclick="showPage('quote')">
+    Get a Quote
+  </button>
+
+</nav>
+
+<!-- HOME -->
+
+<div class="page active" id="page-home">
+
+  <section class="home-hero">
+
+    <div class="home-hero-bg"></div>
+
+    <div class="container home-hero-content">
+
+      <div class="eyebrow">
+        Commercial Facade Specialists
+      </div>
+
+      <h1 class="page-title">
+        Architectural <em>Facades</em><br>
+        Built to Endure
+      </h1>
+
+      <p class="lead">
+        We coordinate facade systems before problems reach site,
+        integrating engineering, procurement, compliance,
+        waterproofing, logistics, glazing performance,
+        installation sequencing and project coordination.
+      </p>
+
+      <div class="action-row">
+
+        <button class="btn-gold" onclick="showPage('projects')">
+          View Our Work
+        </button>
+
+        <button class="btn-outline" onclick="showPage('quote')">
+          Get a Quote
+        </button>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <div class="stats-row">
+
+    <div class="stat-item">
+      <span class="stat-num">500+</span>
+      <span class="stat-lbl">Projects Delivered</span>
+    </div>
+
+    <div class="stat-item">
+      <span class="stat-num">18+</span>
+      <span class="stat-lbl">Years of Excellence</span>
+    </div>
+
+    <div class="stat-item">
+      <span class="stat-num">±1mm</span>
+      <span class="stat-lbl">CNC Precision</span>
+    </div>
+
+    <div class="stat-item">
+      <span class="stat-num">10yr</span>
+      <span class="stat-lbl">Warranty</span>
+    </div>
+
   </div>
 
-</section>
-<style>
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-:root{
-  --gold:#B89A5A;--gold-light:#D4B87A;--charcoal:#1A1A18;
-  --dark:#111110;--mid:#2E2E2C;--muted:#888880;--text:#E8E6DF;
-  --serif:'Cormorant Garamond',Georgia,serif;--sans:'DM Sans',system-ui,sans-serif;
-}
-html,body{height:100%;background:var(--dark);color:var(--text);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden}
-  .logo {
-      width: 120px; /* adjust size */
-      height: auto;
-      margin-bottom: 20px;
-    }
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:200;display:flex;align-items:center;justify-content:space-between;padding:1.1rem 3rem;background:rgba(17,17,16,0.93);backdrop-filter:blur(14px);border-bottom:1px solid rgba(184,154,90,0.15)}
-.logo{font-family:var(--serif);font-size:1.55rem;font-weight:600;letter-spacing:0.06em;color:#fff;cursor:pointer}
-.logo span{color:var(--gold)}
-.nav-links{display:flex;gap:0;list-style:none}
-.nav-links button{background:none;border:none;border-bottom:2px solid transparent;color:var(--muted);font-family:var(--sans);font-size:0.73rem;font-weight:400;letter-spacing:0.11em;text-transform:uppercase;padding:0.45rem 0.9rem;cursor:pointer;transition:color 0.2s,border-color 0.2s}
-.nav-links button:hover{color:var(--gold-light)}
-.nav-links button.active{color:var(--gold-light);border-bottom-color:var(--gold)}
-.nav-cta{background:transparent;border:1px solid var(--gold);color:var(--gold);padding:0.45rem 1.3rem;font-family:var(--sans);font-size:0.71rem;font-weight:400;letter-spacing:0.12em;text-transform:uppercase;cursor:pointer;transition:background 0.2s,color 0.2s}
-.nav-cta:hover{background:var(--gold);color:var(--dark)}
+  <div class="container">
 
+    <div class="home-intro">
+
+      <div class="home-intro-img">
+
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80">
+
+        <div class="badge">
+          <strong>A+</strong>
+          <span>Safety</span>
+        </div>
+
+      </div>
+
+      <div>
+
+        <div class="eyebrow">
+          Who We Are
+        </div>
+
+        <h2 class="section-title">
+          Engineering <em>Craft</em><br>
+          Delivered with Precision
+        </h2>
+
+        <p class="lead">
+          SMG Facade partners with architects,
+          developers and contractors to deliver
+          facade systems combining engineering,
+          performance and visual excellence.
+        </p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <footer class="site-footer">
+
+    <div class="footer-inner">
+
+      <span>
+        © 2020 SMG Facade Pty Ltd.
+      </span>
+
+      <span>
+        info@smgfacade.com.au
+      </span>
+
+    </div>
+
+  </footer>
+
+</div>
+
+<!-- SERVICES -->
+
+<div class="page" id="page-services">
+
+  <div class="container cq-page">
+
+    <div class="eyebrow">
+      What We Do
+    </div>
+
+    <h1 class="page-title">
+      Our <em>Services</em>
+    </h1>
+
+  </div>
+
+  <div class="container">
+
+    <div class="services-grid">
+
+      <div class="svc-card">
+        <span class="svc-num">01</span>
+        <h3 class="svc-title">Facade Management</h3>
+        <p class="svc-desc">
+          Full coordination from planning to delivery.
+        </p>
+      </div>
+
+      <div class="svc-card">
+        <span class="svc-num">02</span>
+        <h3 class="svc-title">Engineering Coordination</h3>
+        <p class="svc-desc">
+          Technical support between consultants and suppliers.
+        </p>
+      </div>
+
+      <div class="svc-card">
+        <span class="svc-num">03</span>
+        <h3 class="svc-title">Tender Estimation</h3>
+        <p class="svc-desc">
+          BOQs, procurement reviews and tender pricing.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- PROJECTS -->
+
+<div class="page" id="page-projects">
+
+  <div class="container cq-page">
+
+    <div class="eyebrow">
+      Selected Work
+    </div>
+
+    <h1 class="page-title">
+      Our <em>Projects</em>
+    </h1>
+
+  </div>
+
+  <div class="container">
+
+    <div class="projects-grid">
+
+      <div class="proj-card">
+
+        <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=800&q=80">
+
+        <div class="proj-info">
+          <div class="proj-tag">Commercial Tower</div>
+          <div class="proj-title">One Pacific Place</div>
+          <div class="proj-loc">Sydney CBD</div>
+        </div>
+
+      </div>
+
+      <div class="proj-card">
+
+        <img src="https://images.unsplash.com/photo-1464082354059-27db6ce50048?w=800&q=80">
+
+        <div class="proj-info">
+          <div class="proj-tag">Office</div>
+          <div class="proj-title">Harbourview Centre</div>
+          <div class="proj-loc">Brisbane</div>
+        </div>
+
+      </div>
+
+      <div class="proj-card">
+
+        <img src="https://images.unsplash.com/photo-1515263487990-61b07816b324?w=800&q=80">
+
+        <div class="proj-info">
+          <div class="proj-tag">Education</div>
+          <div class="proj-title">Innovation Hub</div>
+          <div class="proj-loc">Melbourne</div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- ABOUT -->
+
+<div class="page" id="page-about">
+
+  <div class="container cq-page">
+
+    <div class="eyebrow">
+      About Us
+    </div>
+
+    <h1 class="page-title">
+      About <em>SMG</em>
+    </h1>
+
+    <p class="lead">
+      SMG Facade delivers coordinated facade support,
+      engineering integration and procurement assistance
+      across commercial construction projects in Australia.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- INSIGHTS -->
+
+<div class="page" id="page-insights">
+
+  <div class="container cq-page">
+
+    <div class="eyebrow">
+      Industry Insights
+    </div>
+
+    <h1 class="page-title">
+      Facade <em>Insights</em>
+    </h1>
+
+    <p class="lead">
+      Technical coordination, procurement strategy,
+      QA processes and buildability reviews.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- CAREERS -->
+
+<div class="page" id="page-careers">
+
+  <div class="container cq-page">
+
+    <div class="eyebrow">
+      Careers
+    </div>
+
+    <h1 class="page-title">
+      Join <em>Our Team</em>
+    </h1>
+
+    <p class="lead">
+      We're always looking for skilled professionals
+      passionate about facade systems and construction delivery.
+    </p>
+
+  </div>
+
+</div>
+
+<!-- CONTACT -->
+
+<div class="page" id="page-contact">
+
+  <div class="container cq-page">
+
+    <div class="eyebrow">
+      Contact Us
+    </div>
+
+    <h1 class="page-title">
+      Get In <em>Touch</em>
+    </h1>
+
+    <div class="quote-grid">
+
+      <div>
+
+        <p class="lead">
+          Reach out to discuss your next project.
+        </p>
+
+        <div class="contact-detail">
+
+          <div>
+            <div class="c-label">Email</div>
+            <div class="c-value">info@smgfacade.com.au</div>
+          </div>
+
+          <div>
+            <div class="c-label">Phone</div>
+            <div class="c-value">(02) 9XXX XXXX</div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <form class="contact-form">
+
+        <div class="form-row">
+
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text">
+          </div>
+
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text">
+          </div>
+
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email">
+        </div>
+
+        <div class="form-group">
+          <label>Message</label>
+          <textarea rows="5"></textarea>
+        </div>
+
+        <button class="submit-btn">
+          Send Message
+        </button>
+
+      </form>
+
+    </div>
+
+  </div>
+
+</div>
+
+<!-- QUOTE -->
+
+<div class="page" id="page-quote">
+
+  <div class="container cq-page">
+
+    <div class="eyebrow">
+      Request a Quote
+    </div>
+
+    <h1 class="page-title">
+      Get a <em>Quote</em>
+    </h1>
+
+    <p class="lead">
+      Submit your project details and our team
+      will respond within one business day.
+    </p>
+
+  </div>
+
+</div>
+
+<script>
+
+const pages = [
+  'home',
+  'services',
+  'projects',
+  'about',
+  'insights',
+  'careers',
+  'contact',
+  'quote'
+];
+
+function showPage(id){
+
+  pages.forEach(page => {
+
+    const pageEl = document.getElementById('page-' + page);
+    const navEl = document.getElementById('nav-' + page);
+
+    if(pageEl){
+      pageEl.classList.remove('active');
+    }
+
+    if(navEl){
+      navEl.classList.remove('active');
+    }
+
+  });
+
+  const activePage = document.getElementById('page-' + id);
+  const activeNav = document.getElementById('nav-' + id);
+
+  if(activePage){
+    activePage.classList.add('active');
+  }
+
+  if(activeNav){
+    activeNav.classList.add('active');
+  }
+
+  window.scrollTo(0,0);
+
+}
+
+</script>
+
+</body>
+</html>
 /* PAGE SYSTEM */
 .page{display:none;min-height:100vh;padding-top:62px;animation:fadeIn 0.3s ease}
 .page.active{display:block}
