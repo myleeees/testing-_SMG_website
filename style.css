@@ -97,10 +97,6 @@ body{
     display:flex;
     align-items:center;
     justify-content:center;
-    .overlay{
-    position:relative;
-    z-index:1;
-}
 }
 
 /* VIDEO BACKGROUND */
