@@ -95,11 +95,12 @@ body {
     padding: 15px;
 }
 
-.logo {
-    max-height: 45px;
-    width: 30;
-    object-fit: contain;
-}
+    .logo {
+      width: 120px; /* adjust size */
+      height: auto;
+      margin-bottom: 20px;
+    }
+
 
 .nav-links {
     list-style: none;
