@@ -96,10 +96,10 @@ body {
 }
 
 .logo {
-      width:40px; /* adjust size */
-      height: auto;
-      margin-bottom: 20px;
-    }
+    max-height: 45px;
+    width: auto;
+    object-fit: contain;
+}
 
 
 .nav-links {
