@@ -78,15 +78,16 @@ body {
 .overlay{
     position:relative;
     z-index:2;
+
     width:80%;
     max-width:900px;
     padding:20px;
-    text-align:center;
 
     display:flex;
     flex-direction:column;
-    align-items:center;
+    align-items:flex-start;
     justify-content:center;
+    text-align:left;
 }
 
 .overlay h1{
