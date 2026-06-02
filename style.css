@@ -96,9 +96,9 @@ body {
 }
 
 .logo {
-    height: 40px;
-    width: auto;
-    cursor: pointer;
+    max-height: 45px;
+    width: 30;
+    object-fit: contain;
 }
 
 .nav-links {
