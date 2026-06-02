@@ -95,8 +95,8 @@ body {
     padding: 15px;
 }
 
-    .logo {
-      width: 120px; /* adjust size */
+.logo {
+      width:40px; /* adjust size */
       height: auto;
       margin-bottom: 20px;
     }
