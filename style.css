@@ -96,9 +96,10 @@ body {
 }
 
 .logo {
-    max-height: 45px;
+    height: 24px;
     width: auto;
-    object-fit: contain;
+    display: block;
+    cursor: pointer;
 }
 
 
