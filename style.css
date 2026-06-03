@@ -225,3 +225,35 @@ html{
   section{
     position:relative;
   }
+.menu-toggle{
+  display:none;
+  font-size:28px;
+  color:white;
+  cursor:pointer;
+}
+
+@media(max-width:900px){
+
+  .menu-toggle{
+    display:block;
+  }
+
+  .nav-links{
+    display:none;
+    position:absolute;
+    top:70px;
+    left:0;
+    width:100%;
+    background:#111110;
+    flex-direction:column;
+    padding:1rem 0;
+  }
+
+  .nav-links.show{
+    display:flex;
+  }
+
+  .nav-links li{
+    text-align:center;
+  }
+}
