@@ -106,10 +106,10 @@ body {
     width:auto;
 }
 
-.nav-links {
-    list-style: none;
-    display: flex;
-    gap: 20px;
+.nav-links{
+    display:flex;
+    gap:0.3rem;
+    flex-wrap:wrap;
 }
 
 .nav-links li {
