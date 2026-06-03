@@ -17,9 +17,9 @@ function showPage(id){
   
   
   // MOBILE MENU TOGGLE
-  function toggleMenu(){
-    document.getElementById("navLinks").classList.toggle("show");
-  }
+function toggleMenu(){
+  document.querySelector('.nav-links').classList.toggle('show');
+}
   
   
   // CLOSE MENU WHEN CLICKING OUTSIDE (optional but good UX)
