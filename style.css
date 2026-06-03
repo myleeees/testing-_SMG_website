@@ -95,13 +95,14 @@ body {
     padding: 15px;
 }
 
-.logo {
-    height: 24px;
+.logo{
+    height: 28px;
     width: auto;
-    display: block;
-    cursor: pointer;
 }
 
+nav{
+    padding: 1rem 2rem;
+}
 
 .nav-links {
     list-style: none;
