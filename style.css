@@ -1135,7 +1135,7 @@ function showPage(id){
     activeNav.classList.add('active');
   }
 
-  window.scrollTo (0,0);
+  window.scrollTo(0,0);
 
 }
 
