@@ -744,9 +744,12 @@ nav{
     </p>
     </div>
   </div>
-
 <!-- SERVICES -->
-<div class= "page" id="page-services">
+
+<div class="page" id="page-services">
+
+  <div class="container cq-page">
+
     <div class="eyebrow">
       What We Do
     </div>
@@ -756,8 +759,11 @@ nav{
     </h1>
 
   </div>
+
   <div class="container">
-    <class="services-grid">
+
+    <div class="services-grid">
+
       <div class="svc-card">
         <span class="svc-num">01</span>
         <h3 class="svc-title">Facade Management</h3>
@@ -808,7 +814,8 @@ nav{
           Site coordination, QA reviews, defect management, and delivery support throughout constructions.
         </p>
       </div>
-</div>
+
+    </div>
 </div>
 <!-- PROJECTS -->
 
