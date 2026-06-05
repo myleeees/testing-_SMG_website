@@ -572,6 +572,8 @@ nav{
 
     <li><button onclick="showPage('services')" id="nav-services">Our Services</button></li>
 
+    <li><button onclick="showPage('insights')" id="nav-insights">Why SMG facade</button></li>
+
     <li><button onclick="showPage('projects')" id="nav-projects">Projects</button></li>
 
     <li><button onclick="showPage('process')" id="nav-process">Our Process</button></li>
@@ -667,24 +669,8 @@ nav{
       </div>
 
     </div>
+  
     <div>
-      <div class="page-title">
-          ABOUT SMG
-         </div>
-
-    <div class="eyebrow">
-     Built to Bridge Design and Delivery
-    </div>
-
-    <p class="lead">
-      SMG Facade was established to close the gap between design intent, 
-        procurement, compliance, and construction execution. <br><br>
-        With over 25years of combined industry experience, we help developers, 
-        builders, consultants, and contractors
-        deliver technically coordinated and commercially practical 
-        facade solutions from planning through completion. <br><br>
-    </p>
-
         <div class="page-title">
             COMPANY STATEMENT
            </div>
@@ -703,6 +689,19 @@ nav{
 
     </div>
     <div>
+
+        <div class="page-title">
+          Why SMG Facade?
+        </div>
+  
+        <p class="lead">
+          ✔️Technical Expertise <br>
+          ✔️Commercial Awareness <br>
+          ✔️End-to-End Coordination <br>
+          ✔️Practical Delivery Solutions <br>
+          ✔️Australian Standards & NCC Focus
+        </p>
+  
       </div>
   </div>
 
@@ -720,9 +719,8 @@ nav{
   </div>
 
 </footer>
-</div>
-</div>
 
+</div>
 <!-- ABOUT -->
 <div class="page" id="page-about">
 
@@ -730,12 +728,15 @@ nav{
       <h1 class="page-title">
         About <em>SMG</em>
       </h1>
-
+      
       <div class="eyebrow">
-        Built to Bridge Design and Delivery
-       </div>
-
+      Delivering Better Building Outcomes
+     </div>
       <p class="lead">
+        SMG Facade was established to close the gap between design intent, 
+        procurement, compliance, and construction execution. <br><br>
+        With over 25years of combined industry experience, we help developers, builders, consultants, and contractors
+        deliver technically coordinated and commercially practical facade solutions from planning through completion. <br><br>
         SMG Facade is an Australian-owned facade management and technical coordination company based in New South wales. <br> <br>
         Founded to provide a smarter and more coordinated approach to facade delivery, we bridge the gap between design,
         procurement, compliance, and construction. <br><br>
@@ -743,9 +744,8 @@ nav{
         architects, consultants, suppliers, and installation teams across Australia.
     </p>
     </div>
+  
   </div>
-</div>
-</div>
 
 <!-- SERVICES -->
 
@@ -764,7 +764,9 @@ nav{
   </div>
 
   <div class="container">
+
     <div class="services-grid">
+
       <div class="svc-card">
         <span class="svc-num">01</span>
         <h3 class="svc-title">Facade Management</h3>
@@ -815,8 +817,34 @@ nav{
           Site coordination, QA reviews, defect management, and delivery support throughout constructions.
         </p>
       </div>
+
     </div>
+</div>
+  </div>
+</div>
+</div>
+
+<!-- INSIGHTS -->
+
+<div class="page" id="page-insights">
+
+    <div class="container cq-page">
   
+      <div class="eyebrow">
+        WHY CHOOSE SMG FACADE?
+      </div>
+  
+      <h1 class="page-title">
+        25+ Years Combined Experience</em>
+      </h1>
+  
+      <p class="lead">
+        Extensive industry knowledge across facade engineering,
+        estimating, procurement, and project delivery.
+      </p>
+    </div>
+</div>
+</div>
 <!-- PROJECTS -->
 
 <div class="page" id="page-projects">
@@ -909,6 +937,9 @@ nav{
         </p>
      </div>
     </div>
+</div>
+</div>
+</div>
 
 <!-- PROCESS-->
 <div class="page" id= "page-process">
@@ -934,7 +965,7 @@ nav{
             <span class="svc-num">02</span>
             <h3 class="svc-title">COORDINATE</h3>
             <p class="svc-desc">
-              Design development, technical reviews, and stakeholder alignment.
+              Design dveelopment, technical reviews, and stakeholder alignment.
             </p>
           </div>
     
@@ -965,7 +996,8 @@ nav{
   </div>
 </div>
 </div>
-
+</div>
+</div>
 
 <!-- CONTACT -->
 <div class="page" id="page-contact">
@@ -1071,6 +1103,7 @@ const pages = [
   'home',
   'about',
   'services',
+  'insights',
   'projects',
   'process',
   'contact',
